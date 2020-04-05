@@ -1,0 +1,10 @@
+chakra:
+  bootstrapServers: localhost:9092
+  groupId: test
+  handlers:
+    - inputTopic: start
+      handler: com.event.framework.publisher.StartEventHandler
+      outputTopic: next
+    - inputTopic: next
+      handler: com.event.framework.publisher.NextEventHandler
+      outputTopic: none
